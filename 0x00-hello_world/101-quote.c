@@ -1,14 +1,16 @@
-#include <unistd.h>
+#include <stdio.h>
+
 /**
- * entry - main
- * write(2, message, 59); // 2 represents STDERR, 
- * 59 is the length of the message
+ * main - prints to string
+ * Description: Prints "and that piece of art is useful.." without puts
  *
- * return: 1 showing error
+ * Return: 1
  */
-int main(void) 
+
+int main(void)
 {
-	const char *message = ("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
-	write(2, message, 59);
+	char s[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+
+	fprintf(stderr, "%s", s);
 	return (1);
 }
